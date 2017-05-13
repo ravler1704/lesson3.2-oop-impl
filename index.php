@@ -2,13 +2,13 @@
 //интерфейсы
 interface Flieble
 {
-	public function fly();
+	//public function fly();
 }
 
 interface Priceble
 {
-	public function getDiscountPrice();
-	public function getPrice();
+	//public function getDiscountPrice();
+	//public function getPrice();
 }
 //суперклассы
 abstract class Product implements Priceble {
