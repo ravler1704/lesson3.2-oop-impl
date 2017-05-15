@@ -1,35 +1,33 @@
 <?php
-//интерфейсы
+//Интерфейсы
 interface Flieble
 {
-	//public function fly();
+	public function fly();
 }
 
 interface Priceble
 {
-	//public function getDiscountPrice();
-	//public function getPrice();
+	public function getDiscountPrice();
+	public function getPrice();
 }
-//суперклассы
+
+//Суперклассы
 abstract class Product implements Priceble {
 	public $name;
 	public $price;
 	public $discount = 10;
-	
 	
 	public function __construct($name, $price, $discount){
 		$this->name = $name;
 		$this->price = $price;
 		$this->discount = $discount;
 	}
-	
 	public function getPrice(){
 			return $this->price;
 	}
 	public function getDiscountPrice(){
 			return $this->price - (($this->price * $this->discount) / 100);
 	}
-		
 }
 
 abstract class Flying implements Flieble {
@@ -38,8 +36,7 @@ abstract class Flying implements Flieble {
 	}
 }
 
-//подкласс Flying
-
+//Подкласс Flying
 class Duck extends Flying {
 	public $sound;
 	
@@ -51,7 +48,7 @@ class Duck extends Flying {
 	}
 }
 
-//подкласс Product
+//Подкласс Product
 class Tv extends Product {
 	public $size = 40;
 	public $brand;
@@ -85,7 +82,7 @@ class Phone extends Product {
 
 }
 
-//объекты
+//Объекты
 $car1 = new Car();
 $car2 = new Car();
 $car1->changeColor('Зеленая');
@@ -122,5 +119,4 @@ echo 'Цена ' . $iphone->name . ' со скидкой ' . $iphone->getDiscoun
 echo '<br />';
 echo 'Цена ' . $galaxy->name . ' - ' . $galaxy->price . ' руб. ';
 echo '<br />';
-
 ?>
